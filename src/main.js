@@ -51,6 +51,9 @@ let keyboard = {
             this.str = "";
             this.$emit("callback", this.str);
         },
+        touchstart(e){
+            e.preventDefault();
+        },
         delone() {
             if (this.str.length > 0) {
                 this.str = this.str.substr(0, this.str.length - 1);
