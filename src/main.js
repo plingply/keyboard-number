@@ -74,6 +74,9 @@ let keyboard = {
             this.$emit("callback", this.str);
             this.$emit("paycallbakc");
         }
+    },
+    created(){
+        document.documentElement.style.fontSize = document.documentElement.clientWidth / 7.5 + "px";
     }
 }
 
