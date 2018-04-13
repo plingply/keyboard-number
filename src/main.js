@@ -127,7 +127,7 @@ let keyboard = {
         },
         pay() {
             if(this.disabled)return
-            if (this.type && this.str.length > 0) {
+            if (this.type == 'pay' && this.str.length > 0) {
                 if (this.str.indexOf(".") != -1) {
                     if (!this.str.split(".")[1]) {
                         this.str += "00";
