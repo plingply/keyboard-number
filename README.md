@@ -21,6 +21,11 @@ Vue.use(keyboardnumber)
 		type: String,
 		default: 'pay'
 	},
+	// 控制键盘显示 隐藏
+	show: {
+		type: Boolean,
+		default: true
+	},
 	//控制 右下角按钮是否可点击
 	disabled: {
 		type: Boolean,
