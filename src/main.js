@@ -83,6 +83,11 @@ let keyboard = {
                     val = ''
                 }
                 this.str += val;
+            }else if(this.type == 'sfz'){
+                if(this.str.length >= this.len){
+                    val = ''
+                }
+                this.str += val;
             }
             
             this.$emit("callback", this.str);

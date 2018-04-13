@@ -16,7 +16,8 @@
       <span class="textstyle" @touchstart="clicknumberfun($event,'9')">9</span>
     </div>
     <div class="row">
-      <span class="textstyle" @touchstart="clicknumberfun($event,'.')">.</span>
+      <span class="textstyle" @touchstart="clicknumberfun($event,'.')" v-if="type != 'sfz'">.</span>
+      <span class="textstyle" @touchstart="clicknumberfun($event,'x')" v-if="type == 'sfz'">x</span>
       <span class="textstyle" @touchstart="clicknumberfun($event,'0')">0</span>
       <span class="textstyle" @touchstart="delall($event)">清空</span>
     </div>

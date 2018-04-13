@@ -12,7 +12,7 @@
 <body>
 	<div id="app">
 		{{ total }}
-		<keyboard-number @callback="keyboardcallbak" :disabled="true" @paycallbakc="paycallbakc"></keyboard-number>
+		<keyboard-number @callback="keyboardcallbak" :disabled="true" type="sfz" :len="18" @paycallbakc="paycallbakc"></keyboard-number>
 	</div>
 	<script>
 		Vue.use(keyboardnumber)

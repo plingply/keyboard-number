@@ -16,10 +16,20 @@ Vue.use(keyboardnumber)
 
  #### props:
  ```javascript
-  //type默认pay，pay表示金额 phone 表示电话
+  //type默认pay，pay表示金额 phone 表示电话 sfz 表示身份证
 	type: {
 		type: String,
 		default: 'pay'
+	},
+	//控制 右下角按钮是否可点击
+	disabled: {
+		type: Boolean,
+		default: false
+	},
+	//传入给键盘的默认值
+	value: {
+		type: String,
+		default: ''
 	},
 	// text 右下角大按钮文字
 	text: {
