@@ -31,7 +31,7 @@ let keyboard = {
     methods: {
         clicknumberfun(e, val) {
             e.preventDefault()
-            navigator.vibrate(50)
+            navigator.vibrate?navigator.vibrate(50):""
             if (this.type) {
                 if (val === ".") {
                     if (this.str.length === 0) {
@@ -54,12 +54,12 @@ let keyboard = {
         delall(e) {
             this.str = "";
             e.preventDefault()
-            navigator.vibrate(50)
+            navigator.vibrate?navigator.vibrate(50):""
             this.$emit("callback", this.str);
         },
         delonestart(e) {
             e.preventDefault()
-            navigator.vibrate(50)
+            navigator.vibrate?navigator.vibrate(50):""
             if (this.str.length > 0) {
                 this.str = this.str.substr(0, this.str.length - 1);
                 this.$emit("callback", this.str);
@@ -73,7 +73,6 @@ let keyboard = {
             clearInterval(this.onebyoneInterval)
         },
         delonebyone() {
-            console.log(this.str.length)
             if (this.str.length > 0) {
                 this.onebyoneInterval = setInterval(() => {
                     if (this.str.length == 0) {
