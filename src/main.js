@@ -150,6 +150,7 @@ let keyboard = {
         },
         pay() {
             if (this.disabled) return
+            navigator.vibrate ? navigator.vibrate(50) : (navigator.webkitVibrate ? navigator.webkitVibrate(50) : '')
             if (this.type == 'pay' && this.str.length > 0) {
                 if (this.str.indexOf(".") != -1) {
                     if (!this.str.split(".")[1]) {
