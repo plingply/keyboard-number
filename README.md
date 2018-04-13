@@ -5,7 +5,8 @@
 //安装
 npm install keyboardnumber --save
 //在项目中引入
-import keyboardnumber from keyboardnumber
+import 'keyboard-number/dist/style.css';
+import keyboardnumber from "keyboard-number";
 Vue.use(keyboardnumber)
 
 //在项目中适用
