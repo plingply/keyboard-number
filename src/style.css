@@ -24,12 +24,36 @@
 .keyboard .right span {
   display: block;
   width: 100%;
-}
-.keyboard .right span svg {
-  width: 26px;
-  height: 26px;
   position: relative;
-  top: 1px;
+}
+.keyboard .right span i {
+  display: block;
+  width: 18px;
+  height: 18px;
+  position: absolute;
+  border: 1px solid #515151;
+  border-left: none;
+  top: 21px;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  transform: translate(4px);
+  font-style: normal;
+  line-height: 16px;
+  font-size: 18px;
+  font-weight: 100;
+}
+.keyboard .right span i:after {
+  content: "";
+  width: 13px;
+  height: 13px;
+  border: 1px solid #515151;
+  transform: rotate(45deg);
+  position: absolute;
+  left: -7px;
+  top: 2px;
+  border-top: none;
+  border-right: none;
 }
 .keyboard .right s {
   display: block;
