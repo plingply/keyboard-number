@@ -1,6 +1,6 @@
 {
     "name": "keyboard-number",
-    "version": "1.4.6",
+    "version": "1.4.7",
     "description": "vue ui keyboard number",
     "main": "dist/index.js",
     "scripts": {

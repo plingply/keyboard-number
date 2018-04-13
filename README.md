@@ -14,7 +14,7 @@ Vue.use(keyboardnumber)
 
 ```
 
- #### props:
+### props:
  ```javascript
   //type默认pay，pay表示金额 phone 表示电话 sfz 表示身份证
 	type: {
@@ -58,10 +58,10 @@ Vue.use(keyboardnumber)
 	}
  ```
 
- ### methods
+### methods
  ```javascript
 	 @callback
 	 按下数字键 回调
-	 @paycallbakc
+	 @paycallback
 	 右下角按钮回调
  ```
