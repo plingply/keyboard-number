@@ -51,12 +51,25 @@ let keyboard = {
             delinterval: '',
             onebyoneInterval: "",
             bgcolors: '',
-            wh:0
+            wh: 0,
+            target: ''
         };
     },
     methods: {
+        // 按下效果
+        numberstart(e) {
+            this.target = e.target.tagName == 'I' ? e.target.parentNode : e.target
+            this.target.className = this.target.className + ' active'
+            setTimeout(() => {
+                let classname = this.target.className
+                if (classname.indexOf('active') != -1) {
+                    this.target.className = classname.substr(0, classname.length - 6)
+                }
+            }, 100)
+        },
         clicknumberfun(e, val) {
             e.preventDefault()
+            this.numberstart(e)
             navigator.vibrate ? navigator.vibrate(50) : (navigator.webkitVibrate ? navigator.webkitVibrate(50) : '')
             if (this.type == 'pay') {
                 // 判断有效数字 前置为去掉多余的0
@@ -102,11 +115,13 @@ let keyboard = {
         },
         delall(e) {
             this.str = "";
+            this.numberstart(e)
             e.preventDefault()
             navigator.vibrate ? navigator.vibrate(50) : (navigator.webkitVibrate ? navigator.webkitVibrate(50) : '')
             this.$emit("callback", this.str);
         },
         delonestart(e) {
+            this.numberstart(e)
             e.preventDefault()
             navigator.vibrate ? navigator.vibrate(50) : (navigator.webkitVibrate ? navigator.webkitVibrate(50) : '')
             if (this.str.length > 0) {
