@@ -70,6 +70,7 @@ let keyboard = {
         },
         deloneend() {
             clearTimeout(this.delinterval)
+            clearInterval(this.onebyoneInterval)
         },
         delonebyone() {
             console.log(this.str.length)
