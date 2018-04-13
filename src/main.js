@@ -7,6 +7,10 @@ let keyboard = {
             type: String,
             default: 'pay'
         },
+        show:{
+            type: Boolean,
+            default: true
+        },
         disabled: {
             type: Boolean,
             default: false
@@ -36,6 +40,9 @@ let keyboard = {
     watch:{
         disabled(val){
             this.bgcolors = val?'#ddd':this.bgcolor
+        },
+        show(){
+            this.setkeyboardtop()
         }
     },
     data() {
