@@ -1,0 +1,41 @@
+{
+    "name": "keyboard-number",
+    "version": "1.0.0",
+    "description": "vue ui keyboard number",
+    "main": "dist/index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "build": "gulp",
+        "push": "npm publish && git add --all && git commit -a -m 'x' && git push"
+    },
+    "author": "plingply",
+    "license": "ISC",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/plingply/keyboard-number.git"
+    },
+    "devDependencies": {
+        "autoprefixer": "^7.2.6",
+        "del": "^3.0.0",
+        "gulp": "^3.9.1",
+        "gulp-clean-css": "^3.9.3",
+        "gulp-less": "^4.0.0",
+        "gulp-postcss": "^7.0.1",
+        "postcss-clean": "^1.1.0",
+        "postcss-cssnext": "^3.0.2",
+        "postcss-import": "^11.0.0",
+        "postcss-nested": "^2.1.2",
+        "postcss-simple-vars": "^4.1.0",
+        "rollup-plugin-buble": "^0.18.0",
+        "rollup-plugin-commonjs": "^8.2.6",
+        "rollup-plugin-html": "^0.2.1",
+        "rollup-plugin-json": "^2.3.0",
+        "rollup-plugin-license": "^0.5.0",
+        "rollup-plugin-node-resolve": "^3.0.0",
+        "rollup-plugin-postcss": "^0.5.5",
+        "rollup-plugin-progress": "^0.4.0",
+        "rollup-plugin-replace": "^2.0.0",
+        "rollup-plugin-uglify": "^3.0.0",
+        "rollup-watch": "^4.3.1"
+    }
+}

@@ -1,0 +1,69 @@
+@c: #1aad19;
+@success: #1aad19;
+@success_a: #9ed99d;
+@success_e: #179b16;
+@error: #e64340;
+@error_a: #ec8b89;
+@error_e: #ce3c39;
+@c1: #515151;
+@c2: #828282;
+@c3: #9f9f9f;
+@bj: #f0eff5;
+@bj_left: #fff;
+@border-color: #e8e7ec;
+.keyboard {
+  width: 100%;
+  background-color: #fff;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 1001;
+  display: flex;
+  box-shadow: 0 1px 10px 0 rgba(111, 111, 111, 0.2);
+  .left {
+    flex: 3;
+    .row {
+      display: flex;
+      span {
+        display: block;
+        flex: 1;
+      }
+    }
+  }
+  .right {
+    flex: 1;
+    span {
+      display: block;
+      width: 100%;
+      svg {
+		width: 26px;
+		height: 26px;
+        position: relative;
+		top: 1px;
+      }
+    }
+    s {
+      display: block;
+      width: 100%;
+      height: 180px;
+      line-height: 180px;
+      text-decoration: none;
+      background-color: @success;
+      color: #fff;
+      border: none;
+    }
+  }
+}
+.textstyle {
+  height: 60px;
+  line-height: 60px;
+  text-align: center;
+  font-size: 24px;
+  color: @c1;
+  border-top: 1px solid fadeout(@border-color, 50%);
+  border-right: 1px solid fadeout(@border-color, 50%);
+  box-sizing: border-box;
+  &:active {
+    background-color: fadeout(@border-color, 80%);
+  }
+}

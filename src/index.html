@@ -1,0 +1,31 @@
+
+<div class="keyboard">
+  <div class="left">
+    <div class="row">
+      <span class="textstyle" @click="clicknumberfun('1')">1</span>
+      <span class="textstyle" @click="clicknumberfun('2')">2</span>
+      <span class="textstyle" @click="clicknumberfun('3')">3</span>
+    </div>
+    <div class="row">
+      <span class="textstyle" @click="clicknumberfun('4')">4</span>
+      <span class="textstyle" @click="clicknumberfun('5')">5</span>
+      <span class="textstyle" @click="clicknumberfun('6')">6</span>
+    </div>
+    <div class="row">
+      <span class="textstyle" @click="clicknumberfun('7')">7</span>
+      <span class="textstyle" @click="clicknumberfun('8')">8</span>
+      <span class="textstyle" @click="clicknumberfun('9')">9</span>
+    </div>
+    <div class="row">
+      <span class="textstyle" @click="clicknumberfun('.')">.</span>
+      <span class="textstyle" @click="clicknumberfun('0')">0</span>
+      <span class="textstyle" @click="delall">清空</span>
+    </div>
+  </div>
+  <div class="right">
+    <span class="textstyle" @click="delone">
+        <svg class="icon" t="1523585149387" style viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2486" xmlns:xlink="http://www.w3.org/1999/xlink" width="200" height="200"><defs><style type="text/css"></style></defs><path d="M1011.2 134.4h-608c-3.2 0-3.2 0-6.4 3.2L3.2 502.4v3.2s0 3.2-3.2 3.2V518.4s0 3.2 3.2 3.2v3.2l393.6 364.8c3.2 3.2 3.2 3.2 6.4 3.2h608c6.4 0 12.8-3.2 12.8-12.8V147.2c0-9.6-3.2-12.8-12.8-12.8zM1001.6 512v352H409.6L28.8 512 409.6 160h592v352z" p-id="2487" fill="#515151"></path><path d="M499.2 665.6l144-140.8 140.8 140.8 16-16-140.8-140.8 140.8-144-16-16-140.8 144-144-144-16 16 144 144-144 140.8z" p-id="2488" fill="#515151"></path></svg>
+    </span>
+    <s class="textstyle" @click="pay" :style="{backgroundColor:bgcolor,color:textcolor}">{{ text }}</s>
+  </div>
+</div>
