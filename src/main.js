@@ -18,6 +18,10 @@ let keyboard = {
         textcolor: {
             type: String,
             default: "#fff"
+        },
+        len: {
+            type: Number,
+            default: 5
         }
     },
     template,
@@ -25,13 +29,13 @@ let keyboard = {
         return {
             str: "",
             delinterval: '',
-            onebyoneInterval:""
+            onebyoneInterval: ""
         };
     },
     methods: {
         clicknumberfun(e, val) {
             e.preventDefault()
-            navigator.vibrate?navigator.vibrate(50):(navigator.webkitVibrate?navigator.webkitVibrate(50):'')
+            navigator.vibrate ? navigator.vibrate(50) : (navigator.webkitVibrate ? navigator.webkitVibrate(50) : '')
             if (this.type) {
                 if (val === ".") {
                     if (this.str.length === 0) {
@@ -42,6 +46,9 @@ let keyboard = {
                         }
                     }
                 } else {
+                    if (this.str.split(".")[0] && this.str.split(".")[0].length > len) {
+                        val = "";
+                    }
                     if (this.str.split(".")[1] && this.str.split(".")[1].length >= 2) {
                         val = "";
                     }
@@ -54,12 +61,12 @@ let keyboard = {
         delall(e) {
             this.str = "";
             e.preventDefault()
-            navigator.vibrate?navigator.vibrate(50):(navigator.webkitVibrate?navigator.webkitVibrate(50):'')
+            navigator.vibrate ? navigator.vibrate(50) : (navigator.webkitVibrate ? navigator.webkitVibrate(50) : '')
             this.$emit("callback", this.str);
         },
         delonestart(e) {
             e.preventDefault()
-            navigator.vibrate?navigator.vibrate(50):(navigator.webkitVibrate?navigator.webkitVibrate(50):'')
+            navigator.vibrate ? navigator.vibrate(50) : (navigator.webkitVibrate ? navigator.webkitVibrate(50) : '')
             if (this.str.length > 0) {
                 this.str = this.str.substr(0, this.str.length - 1);
                 this.$emit("callback", this.str);

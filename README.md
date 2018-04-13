@@ -35,6 +35,11 @@ Vue.use(keyboardnumber)
 	textcolor: {
 		type: String,
 		default: "#fff"
+	},
+	//限制整数位的位数
+	len: {
+		type: Number,
+		default: 5
 	}
  ```
 
