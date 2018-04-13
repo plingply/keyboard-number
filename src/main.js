@@ -140,12 +140,26 @@ let keyboard = {
             }
             this.$emit("callback", this.str);
             this.$emit("paycallbakc");
+        },
+        setkeyboardtop(){
+            let keyboard = this.$refs.keyboard_id
+            let wh = document.documentElement.clientHeight
+            let kh = keyboard.clientHeight
+            keyboard.style.top = wh - kh + 'px'
         }
     },
     created() {
         document.documentElement.style.fontSize = document.documentElement.clientWidth / 7.5 + "px";
         this.str = this.value
         this.bgcolors = this.disabled?'#ddd':this.bgcolor
+    },
+    mounted(){
+        this.$nextTick(()=>{
+            this.setkeyboardtop()
+        })
+        window.addEventListener("onresize",()=>{
+            this.setkeyboardtop()
+        })
     }
 }
 
