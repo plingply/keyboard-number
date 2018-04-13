@@ -67,16 +67,16 @@
 .keyboard .right s {
   display: block;
   width: 100%;
-  height: 3.825rem;
-  line-height: 3.825rem;
+  height: 3.47625rem;
+  line-height: 3.47625rem;
   text-decoration: none;
   background-color: #1aad19;
   color: #fff;
   border: none;
 }
 .textstyle {
-  height: 1.275rem;
-  line-height: 1.275rem;
+  height: 1.15875rem;
+  line-height: 1.15875rem;
   text-align: center;
   font-size: 24px;
   color: #515151;
