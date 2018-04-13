@@ -4,8 +4,8 @@ let keyboard = {
 
     props: {
         type: {
-            type: Boolean,
-            default: true
+            type: String,
+            default: 'pay'
         },
         value: {
             type: String,
@@ -40,7 +40,7 @@ let keyboard = {
         clicknumberfun(e, val) {
             e.preventDefault()
             navigator.vibrate ? navigator.vibrate(50) : (navigator.webkitVibrate ? navigator.webkitVibrate(50) : '')
-            if (this.type) {
+            if (this.type == 'pay') {
                 // 判断有效数字 前置为去掉多余的0
                 if (val === ".") {
                     if (this.str.length === 0) {
@@ -68,7 +68,10 @@ let keyboard = {
                     }
                     this.str += val;
                 }
-            }else{
+            }else if(this.type == 'phone'){
+                if(val == '.' || this.str.length >= this.len){
+                    val = ''
+                }
                 this.str += val;
             }
             

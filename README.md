@@ -16,10 +16,10 @@ Vue.use(keyboardnumber)
 
  #### props:
  ```javascript
-  //type默认true，true表示格式化输入 false反之
+  //type默认pay，pay表示金额 phone 表示电话
 	type: {
-		type: Boolean,
-		default: true
+		type: String,
+		default: 'pay'
 	},
 	// text 右下角大按钮文字
 	text: {
