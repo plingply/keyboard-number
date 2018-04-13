@@ -28,6 +28,7 @@ let keyboard = {
     },
     methods: {
         clicknumberfun(val) {
+            navigator.vibrate(100)
             if (this.type) {
                 if (val === ".") {
                     if (this.str.length === 0) {
@@ -49,6 +50,7 @@ let keyboard = {
         },
         delall() {
             this.str = "";
+            navigator.vibrate(100)
             this.$emit("callback", this.str);
         },
         delone() {
