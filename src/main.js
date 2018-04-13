@@ -7,7 +7,7 @@ let keyboard = {
             type: String,
             default: 'pay'
         },
-        show:{
+        show: {
             type: Boolean,
             default: true
         },
@@ -37,11 +37,11 @@ let keyboard = {
         }
     },
     template,
-    watch:{
-        disabled(val){
-            this.bgcolors = val?'#ddd':this.bgcolor
+    watch: {
+        disabled(val) {
+            this.bgcolors = val ? '#ddd' : this.bgcolor
         },
-        show(){
+        show() {
             this.setkeyboardtop()
         }
     },
@@ -50,7 +50,7 @@ let keyboard = {
             str: "",
             delinterval: '',
             onebyoneInterval: "",
-            bgcolors:''
+            bgcolors: ''
         };
     },
     methods: {
@@ -68,13 +68,13 @@ let keyboard = {
                         }
                     }
                     this.str += val;
-                    this.str = Number(this.str.split('.')[0])+'.'+(this.str.split('.')[1]?this.str.split('.')[1]:'')
+                    this.str = Number(this.str.split('.')[0]) + '.' + (this.str.split('.')[1] ? this.str.split('.')[1] : '')
                 } else {
-                    if(this.str.indexOf('.') === -1){
-                        this.str = Number(this.str).toString() == '0'?'':Number(this.str).toString()
-                    }else{
-                        if(this.str.split('.')[0].length >= 1){
-                            this.str = Number(this.str.split('.')[0])+'.'+(this.str.split('.')[1]?this.str.split('.')[1]:'')
+                    if (this.str.indexOf('.') === -1) {
+                        this.str = Number(this.str).toString() == '0' ? '' : Number(this.str).toString()
+                    } else {
+                        if (this.str.split('.')[0].length >= 1) {
+                            this.str = Number(this.str.split('.')[0]) + '.' + (this.str.split('.')[1] ? this.str.split('.')[1] : '')
                         }
                     }
                     if (this.str.indexOf(".") == -1 && this.str.length >= this.len) {
@@ -85,18 +85,18 @@ let keyboard = {
                     }
                     this.str += val;
                 }
-            }else if(this.type == 'phone'){
-                if(val == '.' || this.str.length >= this.len){
+            } else if (this.type == 'phone') {
+                if (val == '.' || this.str.length >= this.len) {
                     val = ''
                 }
                 this.str += val;
-            }else if(this.type == 'sfz'){
-                if(this.str.length >= this.len){
+            } else if (this.type == 'sfz') {
+                if (this.str.length >= this.len) {
                     val = ''
                 }
                 this.str += val;
             }
-            
+
             this.$emit("callback", this.str);
         },
         delall(e) {
@@ -133,7 +133,7 @@ let keyboard = {
             }
         },
         pay() {
-            if(this.disabled)return
+            if (this.disabled) return
             if (this.type == 'pay' && this.str.length > 0) {
                 if (this.str.indexOf(".") != -1) {
                     if (!this.str.split(".")[1]) {
@@ -148,23 +148,23 @@ let keyboard = {
             this.$emit("callback", this.str);
             this.$emit("paycallbakc");
         },
-        setkeyboardtop(){
+        setkeyboardtop() {
             let keyboard = this.$refs.keyboard_id
             let wh = document.documentElement.clientHeight
-            let kh = keyboard.offsetHeight
+            let kh = this.show ? keyboard.offsetHeight : 0
             keyboard.style.top = wh - kh + 'px'
         }
     },
     created() {
         document.documentElement.style.fontSize = document.documentElement.clientWidth / 7.5 + "px";
         this.str = this.value
-        this.bgcolors = this.disabled?'#ddd':this.bgcolor
+        this.bgcolors = this.disabled ? '#ddd' : this.bgcolor
     },
-    mounted(){
-        this.$nextTick(()=>{
+    mounted() {
+        this.$nextTick(() => {
             this.setkeyboardtop()
         })
-        window.addEventListener("onresize",()=>{
+        window.addEventListener("onresize", () => {
             this.setkeyboardtop()
         })
     }
