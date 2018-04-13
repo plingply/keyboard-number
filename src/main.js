@@ -37,6 +37,7 @@ let keyboard = {
             e.preventDefault()
             navigator.vibrate ? navigator.vibrate(50) : (navigator.webkitVibrate ? navigator.webkitVibrate(50) : '')
             if (this.type) {
+                // 判断有效数字 前置为去掉多余的0
                 if (val === ".") {
                     if (this.str.length === 0) {
                         this.str = "0";
@@ -45,17 +46,26 @@ let keyboard = {
                             val = "";
                         }
                     }
+                    this.str += val;
+                    this.str = Number(this.str.split('.')[0])+'.'+(this.str.split('.')[1]?this.str.split('.')[1]:'')
                 } else {
-                    if (this.str.split(".")[0] && this.str.split(".")[0].length >= this.len) {
+                    if(this.str.indexOf('.') === -1){
+                        this.str = Number(this.str).toString() == '0'?'':Number(this.str).toString()
+                    }else{
+                        if(this.str.split('.')[0].length >= 1){
+                            this.str = Number(this.str.split('.')[0])+'.'+(this.str.split('.')[1]?this.str.split('.')[1]:'')
+                        }
+                    }
+                    if (this.str.indexOf(".") == -1 && this.str.length >= this.len) {
                         val = "";
                     }
                     if (this.str.split(".")[1] && this.str.split(".")[1].length >= 2) {
                         val = "";
                     }
+                    this.str += val;
                 }
             }
-
-            this.str += val;
+            
             this.$emit("callback", this.str);
         },
         delall(e) {
@@ -92,17 +102,15 @@ let keyboard = {
             }
         },
         pay() {
-            if (this.type) {
-                if (this.str.length > 0) {
-                    if (this.str.indexOf(".") != -1) {
-                        if (!this.str.split(".")[1]) {
-                            this.str += "00";
-                        } else if (this.str.split(".")[1].length === 1) {
-                            this.str += "0";
-                        }
-                    } else {
-                        this.str += ".00";
+            if (this.type && this.str.length > 0) {
+                if (this.str.indexOf(".") != -1) {
+                    if (!this.str.split(".")[1]) {
+                        this.str += "00";
+                    } else if (this.str.split(".")[1].length === 1) {
+                        this.str += "0";
                     }
+                } else {
+                    this.str += ".00";
                 }
             }
             this.$emit("callback", this.str);
