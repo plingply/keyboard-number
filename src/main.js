@@ -46,7 +46,7 @@ let keyboard = {
                         }
                     }
                 } else {
-                    if (this.str.split(".")[0] && this.str.split(".")[0].length > len) {
+                    if (this.str.split(".")[0] && this.str.split(".")[0].length > this.len) {
                         val = "";
                     }
                     if (this.str.split(".")[1] && this.str.split(".")[1].length >= 2) {
