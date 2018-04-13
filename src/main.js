@@ -7,6 +7,10 @@ let keyboard = {
             type: Boolean,
             default: true
         },
+        value: {
+            type: String,
+            default: ''
+        },
         text: {
             type: String,
             default: "支付"
@@ -119,6 +123,7 @@ let keyboard = {
     },
     created() {
         document.documentElement.style.fontSize = document.documentElement.clientWidth / 7.5 + "px";
+        this.str = this.value
     }
 }
 
