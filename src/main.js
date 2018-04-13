@@ -68,6 +68,8 @@ let keyboard = {
                     }
                     this.str += val;
                 }
+            }else{
+                this.str += val;
             }
             
             this.$emit("callback", this.str);
