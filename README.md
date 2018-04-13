@@ -1,9 +1,9 @@
 # keyboardnumber
 
-### 适用方法：
+### 使用方法：
 ```javascript
 //安装
-npm install keyboardnumber --save
+npm install keyboard-number --save
 //在项目中引入
 import 'keyboard-number/dist/style.css';
 import keyboardnumber from "keyboard-number";
