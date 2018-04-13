@@ -50,7 +50,8 @@ let keyboard = {
             str: "",
             delinterval: '',
             onebyoneInterval: "",
-            bgcolors: ''
+            bgcolors: '',
+            wh:0
         };
     },
     methods: {
@@ -150,9 +151,8 @@ let keyboard = {
         },
         setkeyboardtop() {
             let keyboard = this.$refs.keyboard_id
-            let wh = document.documentElement.clientHeight
             let kh = this.show ? keyboard.offsetHeight : 0
-            keyboard.style.top = wh - kh + 'px'
+            keyboard.style.top = this.wh - kh + 'px'
         }
     },
     created() {
@@ -161,10 +161,12 @@ let keyboard = {
         this.bgcolors = this.disabled ? '#ddd' : this.bgcolor
     },
     mounted() {
+        this.wh = document.documentElement.clientHeight
         this.$nextTick(() => {
             this.setkeyboardtop()
         })
         window.addEventListener("onresize", () => {
+            this.wh = document.documentElement.clientHeight
             this.setkeyboardtop()
         })
     }
