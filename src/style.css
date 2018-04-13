@@ -66,16 +66,16 @@
 .keyboard .right s {
   display: block;
   width: 100%;
-  height: 150px;
-  line-height: 150px;
+  height: 180px;
+  line-height: 180px;
   text-decoration: none;
   background-color: #1aad19;
   color: #fff;
   border: none;
 }
 .textstyle {
-  height: 50px;
-  line-height: 50px;
+  height: 60px;
+  line-height: 60px;
   text-align: center;
   font-size: 24px;
   color: #515151;
