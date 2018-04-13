@@ -35,7 +35,7 @@ let keyboard = {
     template,
     watch:{
         disabled(val){
-            this.bgcolors = val?'#ddd':this.this.bgcolor
+            this.bgcolors = val?'#ddd':this.bgcolor
         }
     },
     data() {
@@ -140,7 +140,7 @@ let keyboard = {
     created() {
         document.documentElement.style.fontSize = document.documentElement.clientWidth / 7.5 + "px";
         this.str = this.value
-        this.bgcolors = this.disabled?'#ddd':this.this.bgcolor
+        this.bgcolors = this.disabled?'#ddd':this.bgcolor
     }
 }
 
