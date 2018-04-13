@@ -23,11 +23,13 @@ let keyboard = {
     template,
     data() {
         return {
-            str: ""
+            str: "",
+            delinterval: '',
+            onebyoneInterval:""
         };
     },
     methods: {
-        clicknumberfun(e,val) {
+        clicknumberfun(e, val) {
             e.preventDefault()
             navigator.vibrate(50)
             if (this.type) {
@@ -55,12 +57,31 @@ let keyboard = {
             navigator.vibrate(50)
             this.$emit("callback", this.str);
         },
-        delone(e) {
+        delonestart(e) {
             e.preventDefault()
             navigator.vibrate(50)
             if (this.str.length > 0) {
                 this.str = this.str.substr(0, this.str.length - 1);
                 this.$emit("callback", this.str);
+                this.delinterval = setTimeout(() => {
+                    this.delonebyone()
+                }, 500)
+            }
+        },
+        deloneend() {
+            clearTimeout(this.delinterval)
+        },
+        delonebyone() {
+            console.log(this.str.length)
+            if (this.str.length > 0) {
+                this.onebyoneInterval = setInterval(() => {
+                    if (this.str.length == 0) {
+                        clearInterval(this.onebyoneInterval)
+                        return
+                    }
+                    this.str = this.str.substr(0, this.str.length - 1);
+                    this.$emit("callback", this.str);
+                }, 100)
             }
         },
         pay() {
@@ -81,7 +102,7 @@ let keyboard = {
             this.$emit("paycallbakc");
         }
     },
-    created(){
+    created() {
         document.documentElement.style.fontSize = document.documentElement.clientWidth / 7.5 + "px";
     }
 }

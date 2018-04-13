@@ -22,7 +22,7 @@
     </div>
   </div>
   <div class="right">
-    <span class="textstyle clearbtn" @touchstart="delone($event)">
+    <span class="textstyle clearbtn" @touchstart="delonestart($event)" @touchend="deloneend($event)">
       <i>×</i>
     </span>
     <s class="textstyle" @click="pay" :style="{backgroundColor:bgcolor,color:textcolor}">{{ text }}</s>
