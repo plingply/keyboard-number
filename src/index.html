@@ -1,28 +1,28 @@
 <div class="keyboard">
   <div class="left">
     <div class="row">
-      <span class="textstyle" @click="clicknumberfun('1')">1</span>
-      <span class="textstyle" @click="clicknumberfun('2')">2</span>
-      <span class="textstyle" @click="clicknumberfun('3')">3</span>
+      <span class="textstyle" @click="clicknumberfun($event,'1')">1</span>
+      <span class="textstyle" @click="clicknumberfun($event,'2')">2</span>
+      <span class="textstyle" @click="clicknumberfun($event,'3')">3</span>
     </div>
     <div class="row">
-      <span class="textstyle" @click="clicknumberfun('4')">4</span>
-      <span class="textstyle" @click="clicknumberfun('5')">5</span>
-      <span class="textstyle" @click="clicknumberfun('6')">6</span>
+      <span class="textstyle" @click="clicknumberfun($event,'4')">4</span>
+      <span class="textstyle" @click="clicknumberfun($event,'5')">5</span>
+      <span class="textstyle" @click="clicknumberfun($event,'6')">6</span>
     </div>
     <div class="row">
-      <span class="textstyle" @click="clicknumberfun('7')">7</span>
-      <span class="textstyle" @click="clicknumberfun('8')">8</span>
-      <span class="textstyle" @click="clicknumberfun('9')">9</span>
+      <span class="textstyle" @click="clicknumberfun($event,'7')">7</span>
+      <span class="textstyle" @click="clicknumberfun($event,'8')">8</span>
+      <span class="textstyle" @click="clicknumberfun($event,'9')">9</span>
     </div>
     <div class="row">
-      <span class="textstyle" @click="clicknumberfun('.')">.</span>
-      <span class="textstyle" @click="clicknumberfun('0')">0</span>
-      <span class="textstyle" @click="delall">清空</span>
+      <span class="textstyle" @click="clicknumberfun($event,'.')">.</span>
+      <span class="textstyle" @click="clicknumberfun($event,'0')">0</span>
+      <span class="textstyle" @click="delall($event)">清空</span>
     </div>
   </div>
   <div class="right">
-    <span class="textstyle clearbtn" @click="delone">
+    <span class="textstyle clearbtn" @click="delone($event)">
       <i>×</i>
     </span>
     <s class="textstyle" @click="pay" :style="{backgroundColor:bgcolor,color:textcolor}">{{ text }}</s>
