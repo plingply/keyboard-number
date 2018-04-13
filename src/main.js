@@ -7,6 +7,10 @@ let keyboard = {
             type: String,
             default: 'pay'
         },
+        disabled: {
+            type: Boolean,
+            default: false
+        },
         value: {
             type: String,
             default: ''
@@ -29,11 +33,17 @@ let keyboard = {
         }
     },
     template,
+    watch:{
+        disabled(val){
+            this.bgcolors = val?'#ddd':this.this.bgcolor
+        }
+    },
     data() {
         return {
             str: "",
             delinterval: '',
-            onebyoneInterval: ""
+            onebyoneInterval: "",
+            bgcolors:''
         };
     },
     methods: {
@@ -111,6 +121,7 @@ let keyboard = {
             }
         },
         pay() {
+            if(this.disabled)return
             if (this.type && this.str.length > 0) {
                 if (this.str.indexOf(".") != -1) {
                     if (!this.str.split(".")[1]) {
@@ -129,6 +140,7 @@ let keyboard = {
     created() {
         document.documentElement.style.fontSize = document.documentElement.clientWidth / 7.5 + "px";
         this.str = this.value
+        this.bgcolors = this.disabled?'#ddd':this.this.bgcolor
     }
 }
 
