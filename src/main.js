@@ -144,7 +144,7 @@ let keyboard = {
         setkeyboardtop(){
             let keyboard = this.$refs.keyboard_id
             let wh = document.documentElement.clientHeight
-            let kh = keyboard.clientHeight
+            let kh = keyboard.offsetHeight
             keyboard.style.top = wh - kh + 'px'
         }
     },
