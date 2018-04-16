@@ -8,11 +8,11 @@
   width: 100%;
   background-color: #fff;
   position: fixed;
-  top: 10000px;
+  top: 1000px;
   left: 0;
   z-index: 1001;
   display: flex;
-  transition: top .3s linear;
+  transition: top .3s;
   box-shadow: 0 1px 10px 0 rgba(111, 111, 111, 0.2);
 }
 .keyboard .left {
