@@ -24,21 +24,24 @@ user-select: none;
   top: 1000px;
   left: 0;
   z-index: 1001;
-  display: flex;
   transition: top .3s;
   box-shadow: 0 1px 10px 0 rgba(111, 111, 111, 0.2);
+  overflow: hidden;
   .left {
-    flex: 3;
+    width: 75%;
+    float: left;
     .row {
-      display: flex;
+      overflow: hidden;
       span {
         display: block;
-        flex: 1;
+        float: left;
+        width: 33.33%;
       }
     }
   }
   .right {
-    flex: 1;
+    width: 25%;
+    float: left;
     span {
       display: block;
       width: 100%;

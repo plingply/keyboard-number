@@ -52,7 +52,10 @@ let keyboard = {
             onebyoneInterval: "",
             bgcolors: '',
             wh: 0,
-            target: ''
+            target: '',
+            width: 0,
+            dw: 0,
+            dh: 0
         };
     },
     methods: {
@@ -167,14 +170,28 @@ let keyboard = {
         },
         setkeyboardtop() {
             let keyboard = this.$refs.keyboard_id
-            let kh = this.show ? keyboard.offsetHeight : 0
+            keyboard.style.height = this.width * 0.618 + 'px'
+            let kh = this.show ? this.width * 0.618 : 0
             keyboard.style.top = this.wh - kh + 'px'
+            let span = keyboard.querySelectorAll('.textstyle')
+            span.forEach(item => {
+                item.style.width = this.dw + 'px'
+                item.style.height = this.dh + 'px'
+                item.style.lineHeight = this.dh + 'px'
+                if (item.id == 'paybtn') {
+                    item.style.height = this.dh * 3 + 'px'
+                    item.style.lineHeight = this.dh * 3 + 'px'
+                }
+            })
         }
     },
     created() {
-        document.documentElement.style.fontSize = document.documentElement.clientWidth / 7.5 + "px";
+        // document.documentElement.style.fontSize = document.documentElement.clientWidth / 7.5 + "px";
         this.str = this.value
         this.bgcolors = this.disabled ? '#ddd' : this.bgcolor
+        this.width = document.documentElement.clientWidth
+        this.dw = this.width / 4
+        this.dh = this.dw * 0.618
     },
     mounted() {
         this.wh = document.documentElement.clientHeight
