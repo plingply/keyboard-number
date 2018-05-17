@@ -42,7 +42,9 @@ let keyboard = {
             this.bgcolors = val ? '#ddd' : this.bgcolor
         },
         show() {
-            this.setkeyboardtop()
+            setTimeout(()=>{
+                this.setkeyboardtop()
+            },100)
         }
     },
     data() {
