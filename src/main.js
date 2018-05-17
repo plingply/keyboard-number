@@ -42,9 +42,9 @@ let keyboard = {
             this.bgcolors = val ? '#ddd' : this.bgcolor
         },
         show() {
-            setTimeout(()=>{
+            setTimeout(() => {
                 this.setkeyboardtop()
-            },100)
+            }, 100)
         }
     },
     data() {
@@ -53,7 +53,6 @@ let keyboard = {
             delinterval: '',
             onebyoneInterval: "",
             bgcolors: '',
-            wh: 0,
             target: '',
             width: 0,
             dw: 0,
@@ -174,7 +173,7 @@ let keyboard = {
             let keyboard = this.$refs.keyboard_id
             keyboard.style.height = this.width * 0.618 + 'px'
             let kh = this.show ? this.width * 0.618 : 0
-            keyboard.style.top = this.wh - kh + 'px'
+            keyboard.style.bottom = '0px'
             let span = keyboard.querySelectorAll('.textstyle')
             span.forEach(item => {
                 item.style.width = this.dw + 'px'
@@ -191,17 +190,12 @@ let keyboard = {
         // document.documentElement.style.fontSize = document.documentElement.clientWidth / 7.5 + "px";
         this.str = this.value
         this.bgcolors = this.disabled ? '#ddd' : this.bgcolor
+    },
+    mounted() {
         this.width = document.documentElement.clientWidth
         this.dw = this.width / 4
         this.dh = this.dw * 0.618
-    },
-    mounted() {
-        this.wh = document.documentElement.clientHeight
         this.$nextTick(() => {
-            this.setkeyboardtop()
-        })
-        window.addEventListener("onresize", () => {
-            this.wh = document.documentElement.clientHeight
             this.setkeyboardtop()
         })
     }
