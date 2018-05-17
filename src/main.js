@@ -173,7 +173,11 @@ let keyboard = {
             let keyboard = this.$refs.keyboard_id
             keyboard.style.height = this.width * 0.618 + 'px'
             let kh = this.show ? this.width * 0.618 : 0
-            keyboard.style.bottom = '0px'
+            if(this.show){
+                keyboard.style.bottom = '0px'
+            }else{
+                keyboard.style.bottom = '-1000px'
+            }
             let span = keyboard.querySelectorAll('.textstyle')
             span.forEach(item => {
                 item.style.width = this.dw + 'px'
