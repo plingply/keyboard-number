@@ -1,6 +1,7 @@
 # keyboardnumber
 
 [github仓库-求关注-求点心](https://github.com/plingply/keyboard-number)
+[测试地址，请用手机打开 http://jtutu.cn/keyboard](http://jtutu.cn/keyboard)
 
 ### 预览效果
 
