@@ -1,7 +1,14 @@
 # keyboardnumber
 
+[github仓库-求关注-求点心](https://github.com/plingply/keyboard-number)
+
+### 预览效果
+
+<img src="./test/keyboard.png" alt="GitHub" title="GitHub,Social Coding" width="320"/>
+
 ### 使用方法：
 ```javascript
+
 //安装
 npm install keyboard-number --save
 //在项目中引入
@@ -9,7 +16,7 @@ import 'keyboard-number/dist/style.css';
 import keyboardnumber from "keyboard-number";
 Vue.use(keyboardnumber)
 
-//在项目中适用
+//在项目中使用
 <keyboard-number @callback="keyboardcallbak" @paycallbakc="paycallbakc"></keyboard-number>
 
 ```
