@@ -196,11 +196,20 @@ let keyboard = {
         this.bgcolors = this.disabled ? '#ddd' : this.bgcolor
     },
     mounted() {
+
+        let self = this
         this.width = document.documentElement.clientWidth
         this.dw = this.width / 4
         this.dh = this.dw * 0.618
         this.$nextTick(() => {
             this.setkeyboardtop()
+        })
+
+        window.addEventListener('resize',function(){
+            self.width = document.documentElement.clientWidth
+            self.dw = self.width / 4
+            self.dh = self.dw * 0.618
+            self.setkeyboardtop()
         })
     }
 }
